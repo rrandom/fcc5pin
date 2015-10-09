@@ -1,11 +1,26 @@
 'use strict';
 
 var mongoose = require('mongoose'),
-    Schema = mongoose.Schema;
+  Schema = mongoose.Schema;
 
 var PinSchema = new Schema({
-  name: String,
-  info: String,
+  title: {
+    type: String,
+    default: ''
+  },
+  source: {
+    type: String,
+    trim: true,
+    required: 'Source cannot be blank'
+  },
+  submitter: {
+    type: Schema.ObjectId,
+    ref: 'User'
+  },
+  created: {
+    type: Date,
+    default: Date.now
+  },
   active: Boolean
 });
 

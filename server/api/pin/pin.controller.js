@@ -11,6 +11,15 @@ exports.index = function(req, res) {
   });
 };
 
+exports.showMyPins = function (req, res) {
+  Pin.find({submitter: req.user._id}, function (err, pins) {
+    if (err) {
+      return handleError(res, err);
+    }
+    return res.status(200).json(pins);
+  });
+};
+
 // Get a single pin
 exports.show = function(req, res) {
   Pin.findById(req.params.id, function (err, pin) {
