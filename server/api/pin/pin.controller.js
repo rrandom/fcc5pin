@@ -4,15 +4,20 @@ var _ = require('lodash');
 var Pin = require('./pin.model');
 
 // Get list of pins
-exports.index = function(req, res) {
-  Pin.find(function (err, pins) {
-    if(err) { return handleError(res, err); }
-    return res.status(200).json(pins);
-  });
+exports.index = function (req, res) {
+  Pin.find().sort('-created')
+    .exec(function (err, pins) {
+      if (err) {
+        return handleError(res, err);
+      }
+      return res.status(200).json(pins);
+    });
 };
 
 exports.showMyPins = function (req, res) {
-  Pin.find({submitter: req.user._id}, function (err, pins) {
+  Pin.find({
+    submitter: req.user._id
+  }, function (err, pins) {
     if (err) {
       return handleError(res, err);
     }
