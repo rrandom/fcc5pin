@@ -5,6 +5,7 @@ angular.module('fcc5pinApp')
     $scope.pins = [];
 
     $http.get('/api/pins').success(function(pins) {
+      console.log('pins:', pins);
       $scope.pins = pins;
     });
 

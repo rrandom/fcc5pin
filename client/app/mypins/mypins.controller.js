@@ -2,16 +2,16 @@
 
 angular.module('fcc5pinApp')
   .controller('MypinsCtrl', function ($scope, $http, Auth) {
-    $scope.myPins = [];
+    $scope.pins = [];
 
     function getMyPins() {
       $http.get('/api/pins/my').success(function (pins) {
         console.log('pins:', pins);
-        $scope.myPins = pins;
+        $scope.pins = pins;
       });
     }
 
-    //
+
     $scope.addPin = function () {
       console.log('$scope.title:', $scope.title);
       console.log('$scope.source:', $scope.source);
@@ -19,7 +19,6 @@ angular.module('fcc5pinApp')
         console.log("shit");
         return;
       } else {
-        console.log("shitt");
         console.log('Current user:', Auth.getCurrentUser());
 
         $http.post('/api/pins/', {
@@ -31,4 +30,6 @@ angular.module('fcc5pinApp')
         getMyPins();
       }
     };
+
+    getMyPins();
   });

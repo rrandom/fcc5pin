@@ -21,6 +21,7 @@ exports.showMyPins = function (req, res) {
     if (err) {
       return handleError(res, err);
     }
+    console.log('pins:', pins);
     return res.status(200).json(pins);
   });
 };
