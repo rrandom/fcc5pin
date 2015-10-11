@@ -6,7 +6,8 @@ angular.module('fcc5pinApp', [
   'ngSanitize',
   'ngRoute',
   'ui.bootstrap',
-  'wu.masonry'
+  'wu.masonry',
+  'dcbImgFallback'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider

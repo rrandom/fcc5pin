@@ -7,7 +7,7 @@
       <div masonry>
         <div class="masonry-brick" ng-repeat="pin in pins">
           <p>{{pin.title}} </p>
-          <img ng-src="{{ pin.source }}" alt="A masonry brick">
+          <img ng-src="{{ pin.source }}" fallback-src alt="A masonry brick">
         </div>
       </div>
 
