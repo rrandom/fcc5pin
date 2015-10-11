@@ -1,0 +1,27 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="col-md-12">
+  This is the mypins view.
+
+  <form class="thing-form" ng-submit="addPin()">
+    <div class="form-group">
+      <label>title</label>
+      <input type="text" class="form-control" placeholder="title" ng-model="title">
+    </div>
+    <div class="form-group">
+      <label>source</label>
+      <input type="text" class="form-control" placeholder="http link to img" ng-model="source">
+    </div>
+    <button type="submit" class="btn btn-primary">Add New Pin</button>
+  </form>
+
+  <div masonry>
+    <div class="masonry-brick" ng-repeat="pin in pins">
+      <p>{{ pin.title }}</p>
+      <img ng-src="{{ pin.src }}" alt="A masonry brick">
+    </div>
+  </div>
+
+
+
+</div>
