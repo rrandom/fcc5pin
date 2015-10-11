@@ -52,16 +52,16 @@
     <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
     <!-- build:js({client,node_modules}) app/vendor.js -->
+    <!-- fix `TypeError: window.Outlayer is undefined` see https://github.com/passy/angular-masonry/issues/100#issuecomment-79780431 -->
+    <script src="bower_components/masonry/dist/masonry.pkgd.js"></script>
+    <script src="bower_components/imagesloaded/imagesloaded.pkgd.js"></script>
       <!-- bower:js -->
       <script src="bower_components/jquery/dist/jquery.js"></script>
-      <script src="bower_components/angular/angular.js"></script>
-      <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-      <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-      <script src="bower_components/angular-resource/angular-resource.js"></script>
-      <script src="bower_components/angular-route/angular-route.js"></script>
-      <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-      <script src="bower_components/lodash/dist/lodash.compat.js"></script>
       <script src="bower_components/jquery-bridget/jquery.bridget.js"></script>
+      <script src="bower_components/angular/angular.js"></script>
+      <script src="bower_components/angular-resource/angular-resource.js"></script>
+      <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+      <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
       <script src="bower_components/get-style-property/get-style-property.js"></script>
       <script src="bower_components/get-size/get-size.js"></script>
       <script src="bower_components/eventie/eventie.js"></script>
@@ -73,6 +73,9 @@
       <script src="bower_components/masonry/masonry.js"></script>
       <script src="bower_components/imagesloaded/imagesloaded.js"></script>
       <script src="bower_components/angular-masonry/angular-masonry.js"></script>
+      <script src="bower_components/angular-route/angular-route.js"></script>
+      <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+      <script src="bower_components/lodash/dist/lodash.compat.js"></script>
       <!-- endbower -->
     <!-- endbuild -->
 
