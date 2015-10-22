@@ -17,8 +17,16 @@
 
       <div masonry>
         <div class="masonry-brick" ng-repeat="pin in pins">
-          <p>{{pin.title}} </p>
           <img ng-src="{{ pin.source }}" fallback-src alt="A masonry brick">
+          <div>
+            <div class="col-sm-7 pull-left">
+              <h5>{{ pin.title }}</h5>
+            </div>
+            <div class="col-sm-3 pull-right">
+              <a class="close glyphicon glyphicon-remove-circle" href="#" ng-click="deletePin(pin)"></a>
+            </div>
+
+          </div>
         </div>
       </div>
 

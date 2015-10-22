@@ -6,7 +6,6 @@ angular.module('fcc5pinApp')
 
     function getMyPins() {
       $http.get('/api/pins/my').success(function (pins) {
-        console.log('pins:', pins);
         $scope.pins = pins;
       });
     }
@@ -29,6 +28,14 @@ angular.module('fcc5pinApp')
 
         getMyPins();
       }
+    };
+
+    $scope.deletePin = function(pin){
+      console.log('pin:', pin);
+      $http.delete('/api/pins/'+pin._id).success(function(res){
+        console.log('delete success', res);
+        getMyPins();
+      })
     };
 
     getMyPins();
