@@ -15,7 +15,7 @@
     <button type="submit" class="btn btn-primary">Add New Pin</button>
   </form>
 
-      <div masonry>
+      <div masonry column-width="100">
         <div class="masonry-brick" ng-repeat="pin in pins">
           <img ng-src="{{ pin.source }}" fallback-src alt="A masonry brick">
           <div>
